@@ -1,0 +1,21 @@
+apply plugin: 'gulp'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'be.filipblondeel.gradle:gradle-gulp-plugin:0.1'
+  }
+}
+
+task bowerInstall(type:Exec){
+  executable ='bower'
+  args=['install','--allow-root']
+}
+
+task bowerUpdate(type:Exec){
+  executable ='bower'
+  args=['update','--allow-root']
+}
+

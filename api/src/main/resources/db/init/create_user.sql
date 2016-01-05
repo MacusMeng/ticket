@@ -1,0 +1,1 @@
+CREATE USER ticket@'%' IDENTIFIED BY '150710';

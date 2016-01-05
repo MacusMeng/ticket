@@ -1,0 +1,574 @@
+.topheader.navbar-nav > li > a {
+  padding-top: 4px !important;
+  padding-bottom: 0 !important;
+  height: 30px;
+}
+
+.topheader.navbar {
+  min-height: 30px !important;
+  margin-bottom: 0;
+}
+
+.menubar {
+  border-bottom-width: 3px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  z-index: 1029;
+}
+
+.sidebar-width {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .menubar {
+    border-bottom-width: 3px;
+    margin-top: 50px;
+  }
+
+  .sidebar-width {
+    width: auto;
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.breakword {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+button.statusButton {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+div.right-align-button {
+  float: right;
+  padding-right: 10px;
+}
+
+/*Validation*/
+.ng-submitted .ng-invalid {
+  border-color: #a94442;
+}
+
+.ng-dirty.ng-invalid {
+  border-color: #a94442;
+}
+
+div.ng-dirty.ng-invalid .ui-select-toggle {
+  border-color: #a94442;
+}
+
+.ng-submitted .ng-invalid .ui-select-toggle {
+  border-color: #a94442;
+}
+
+div.ng-dirty.ng-invalid .ui-select-multiple {
+  border-color: #a94442;
+}
+
+.ng-submitted .ng-invalid .ui-select-multiple {
+  border-color: #a94442;
+}
+
+.error-message {
+  color: #a94442;
+}
+
+/*Wizard*/
+.steps-indicator {
+  /* ---- steps quantity ---- */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px 0 0 0;
+  height: 30px;
+  list-style: none;
+  /* --- http://www.paulirish.com/2012/box-sizing-border-box-ftw/ ---- */
+}
+
+.steps-indicator:before {
+  background-color: #e6e6e6;
+  content: '';
+  position: absolute;
+  height: 1px;
+}
+
+.steps-indicator.steps-2:before {
+  left: calc(100% / 2 / 2);
+  right: calc(100% / 2 / 2);
+}
+
+.steps-indicator.steps-3:before {
+  left: calc(100% / 3 / 2);
+  right: calc(100% / 3 / 2);
+}
+
+.steps-indicator.steps-4:before {
+  left: calc(100% / 4 / 2);
+  right: calc(100% / 4 / 2);
+}
+
+.steps-indicator.steps-5:before {
+  left: calc(100% / 5 / 2);
+  right: calc(100% / 5 / 2);
+}
+
+.steps-indicator.steps-6:before {
+  left: calc(100% / 6 / 2);
+  right: calc(100% / 6 / 2);
+}
+
+.steps-indicator.steps-7:before {
+  left: calc(100% / 7 / 2);
+  right: calc(100% / 7 / 2);
+}
+
+.steps-indicator.steps-8:before {
+  left: calc(100% / 8 / 2);
+  right: calc(100% / 8 / 2);
+}
+
+.steps-indicator.steps-9:before {
+  left: calc(100% / 9 / 2);
+  right: calc(100% / 9 / 2);
+}
+
+.steps-indicator.steps-10:before {
+  left: calc(100% / 10 / 2);
+  right: calc(100% / 10 / 2);
+}
+
+.steps-indicator * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.steps-indicator li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  text-align: center;
+  line-height: 15px;
+}
+
+.steps-indicator li a {
+  color: #808080;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.steps-indicator li a:before {
+  position: absolute;
+  top: -7px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #e6e6e6;
+  content: '';
+  transition: 0.25s;
+}
+
+.steps-indicator li a:hover {
+  color: #4d4d4d;
+}
+
+.steps-indicator.steps-2 li {
+  width: calc(100% / 2);
+}
+
+.steps-indicator.steps-3 li {
+  width: calc(100% / 3);
+}
+
+.steps-indicator.steps-4 li {
+  width: calc(100% / 4);
+}
+
+.steps-indicator.steps-5 li {
+  width: calc(100% / 5);
+}
+
+.steps-indicator.steps-6 li {
+  width: calc(100% / 6);
+}
+
+.steps-indicator.steps-7 li {
+  width: calc(100% / 7);
+}
+
+.steps-indicator.steps-8 li {
+  width: calc(100% / 8);
+}
+
+.steps-indicator.steps-9 li {
+  width: calc(100% / 9);
+}
+
+.steps-indicator.steps-10 li {
+  width: calc(100% / 10);
+}
+
+.steps-indicator.steps-11 li {
+  width: calc(100% / 11);
+}
+
+.steps-indicator li.default {
+  pointer-events: none;
+}
+
+.steps-indicator li.default a:hover {
+  color: #808080;
+}
+
+.steps-indicator li.current,
+.steps-indicator li.editing {
+  pointer-events: none;
+}
+
+.steps-indicator li.current a:before {
+  background-color: #808080;
+}
+
+.steps-indicator li.done a:before {
+  background-color: #339933;
+}
+
+.steps-indicator li.editing a:before {
+  background-color: #ff0000;
+}
+
+/*Layout*/
+body, html {
+  height: 100%;
+}
+
+/* remove outer padding */
+.main .row {
+  padding: 0px;
+  margin: 0px;
+}
+
+/*Remove rounded coners*/
+
+nav.sidebar.navbar {
+  border-radius: 0px;
+}
+
+nav.sidebar, .main {
+  -webkit-transition: margin 200ms ease-out;
+  -moz-transition: margin 200ms ease-out;
+  -o-transition: margin 200ms ease-out;
+  transition: margin 200ms ease-out;
+}
+
+/* Add gap to nav and right windows.*/
+.main {
+  padding: 10px 10px 0 10px;
+  margin-top: 70px;
+}
+
+/* .....NavBar: Icon only with coloring/layout.....*/
+
+/*small/medium side display*/
+@media (min-width: 768px) {
+
+  /*Allow main to be next to Nav*/
+  .main {
+    position: absolute;
+    width: calc(100% - 40px); /*keeps 100% minus nav size*/
+    margin-left: 40px;
+    float: right;
+    margin-top: 40px;
+  }
+
+  /*lets nav bar to be showed on mouseover*/
+  nav.sidebar:hover + .main {
+    margin-left: 200px;
+  }
+
+  /*Center Brand*/
+  nav.sidebar.navbar.sidebar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+  /*Center Brand*/
+  nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  /*Center Icons*/
+  nav.sidebar a {
+    padding-right: 13px;
+  }
+
+  /*adds border top to first nav box */
+  nav.sidebar .navbar-nav > li:first-child {
+    border-top: 1px #e5e5e5 solid;
+  }
+
+  /*adds border to bottom nav boxes*/
+  nav.sidebar .navbar-nav > li {
+    border-bottom: 1px #e5e5e5 solid;
+  }
+
+  /* Colors/style dropdown box*/
+  nav.sidebar .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  /*allows nav box to use 100% width*/
+  nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+    padding: 0 0px 0 0px;
+  }
+
+  /*colors dropdown box text */
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  /*gives sidebar width/height*/
+  nav.sidebar {
+    width: 200px;
+    height: 100%;
+    margin-left: -160px;
+    float: left;
+    z-index: 8000;
+    margin-bottom: 0px;
+  }
+
+  /*give sidebar 100% width;*/
+  nav.sidebar li {
+    width: 100%;
+  }
+
+  /* Move nav to full on mouse over*/
+  nav.sidebar:hover {
+    margin-left: 0px;
+  }
+  /*for hiden things when navbar hidden*/
+  .forAnimate {
+    opacity: 0;
+  }
+}
+
+/* .....NavBar: Fully showing nav bar..... */
+
+@media (min-width: 1330px) {
+
+  /*Allow main to be next to Nav*/
+  .main {
+    width: calc(100% - 200px); /*keeps 100% minus nav size*/
+    margin-left: 200px;
+    margin-top: 40px;
+  }
+
+  /*Show all nav*/
+  nav.sidebar {
+    margin-left: 0px;
+    float: left;
+  }
+  /*Show hidden items on nav*/
+  nav.sidebar .forAnimate {
+    opacity: 1;
+  }
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #CCC;
+  background-color: transparent;
+}
+
+nav:hover .forAnimate {
+  opacity: 1;
+}
+
+section {
+  padding-left: 15px;
+}
+
+.button {
+  -moz-appearance: button;
+  /* Firefox */
+  -webkit-appearance: button;
+  /* Safari and Chrome */
+  padding: 10px;
+  margin: 10px;
+  width: 70px;
+}
+
+.drop-box {
+  display: block;
+  border: 3px dashed #dce4ec;
+  height: 100px;
+  width: 210px;
+  padding: 7px;
+  color: #58666e;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.drop-box i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dragover {
+  border: 3px dashed #2C3E50;
+}
+
+.message-item {
+  margin-bottom: 25px;
+  margin-left: 40px;
+  position: relative;
+}
+
+.message-item .message-inner {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 10px;
+  position: relative;
+}
+
+.message-item .message-inner:before {
+  border-right: 10px solid #ddd;
+  border-style: solid;
+  border-width: 10px;
+  color: rgba(0, 0, 0, 0);
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  left: -20px;
+  top: 6px;
+  width: 0;
+}
+
+.message-item .message-inner:after {
+  border-right: 10px solid #fff;
+  border-style: solid;
+  border-width: 10px;
+  color: rgba(0, 0, 0, 0);
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  width: 0;
+}
+
+.message-item:before {
+  background: #fff;
+  border-radius: 2px;
+  bottom: -30px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  content: "";
+  height: 100%;
+  left: -30px;
+  position: absolute;
+  width: 3px;
+}
+
+.message-item:after {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  content: "";
+  height: 15px;
+  left: -36px;
+  position: absolute;
+  top: 10px;
+  width: 15px;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.message-item .message-head {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+.message-item .message-head .avatar {
+  margin-right: 20px;
+}
+
+.message-item .message-head .user-detail {
+  overflow: hidden;
+}
+
+.message-item .message-head .user-detail h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.message-item .message-head .post-meta {
+  float: left;
+  padding: 0 15px 0 0;
+}
+
+.message-item .message-head .post-meta > div {
+  color: #333;
+  font-weight: bold;
+  text-align: right;
+}
+
+.post-meta > div {
+  color: #777;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.message-item .message-head .post-meta > div {
+  color: #333;
+  font-weight: bold;
+  text-align: right;
+}
+
+.post-meta > div {
+  color: #777;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+//img {
+//  min-height: 40px;
+//  max-height: 40px;
+//}
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector
+
+

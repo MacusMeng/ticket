@@ -1,0 +1,88 @@
+<div ng-repeat="item in vm.alerts" class="alert alert-danger" role="alert">{{item|ticketErrors|translate}}</div>
+<div class="col-md-8">
+  <form name="ticketForm" ng-submit="vm.submit(ticketForm)" novalidate>
+    <div class="form-group">
+      <label class="control-label" for="title">{{'ticket_add_label_title'|translate}}</label>
+      <input type="text" class="form-control" name="title" id="title"
+             placeholder="{{'ticket_add_label_title'|translate}}" ng-model="vm.form.title"
+             ng-maxlength="255" required/>
+
+      <div class="error-message" ng-if="vm.interacted(ticketForm,ticketForm.title)"
+           ng-messages="ticketForm.title.$error">
+        <div ng-message="required">{{'ticket_add_message_title_not_null'|translate}}</div>
+        <div ng-message="maxlength">{{'ticket_add_message_title_max_length'|translate}}</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">{{'ticket_add_label_module'|translate}}</label>
+      <ui-select id="module" name="module" ng-model="vm.form.module" ng-required="true">
+        <ui-select-match placeholder="{{'ticket_add_placeholder_module'|translate}}">
+          {{$select.selected.label|translate}}
+        </ui-select-match>
+        <ui-select-choices repeat="module in vm.modules | filter:$select.search">
+          <div ng-bind-html="module.label |translate| highlight: $select.search"></div>
+        </ui-select-choices>
+      </ui-select>
+      <div class="error-message" ng-if="vm.interacted(ticketForm,ticketForm.module)"
+           ng-messages="ticketForm.module.$error">
+        <div ng-message="required">{{'ticket_add_message_module_not_null'|translate}}</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label">{{'ticket_add_label_content'|translate}}</label>
+      <textarea name="content" ui-tinymce="vm.tinymceOptions" ng-model="vm.form.content" required></textarea>
+
+      <div class="error-message" ng-if="vm.interacted(ticketForm,ticketForm.content)"
+           ng-messages="ticketForm.content.$error">
+        <div ng-message="required">{{'ticket_add_message_content_not_null'|translate}}</div>
+      </div>
+    </div>
+    <div ng-bind-html="vm.form.content|unsafe" ng-show="false"></div>
+    <div class="form-group">
+      <label class="control-label">{{'ticket_add_label_file'|translate}}</label>
+
+      <div ngf-select="true"
+           ngf-drop="true"
+           class="drop-box"
+           ngf-drag-over-class="dragover"
+           accept="',.png,.jpg,.jpeg,.bmp,.rar,.zip,.doc,.docx,.txt,'"
+           ng-disabled="vm.disableUpload()"
+           ngf-change="vm.upload($file)">
+        <i class="glyphicon glyphicon-upload"></i>
+
+        <div>{{'ticket_add_tip_file_upload'|translate}}</div>
+      </div>
+      <p>{{'ticket_add_limit_file_upload'|translate}}</p>
+
+      <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+      <ul class="list-inlie">
+        <li ng-repeat="file in vm.uploadedFiles">
+          <span>{{file.name}}</span>
+          <img style="border: none;border-image: none" width="35" height="35" ngf-src="file"
+               ngf-accept="',.png,.jpg,.jpeg,.bmp,.rar,.zip,.doc,.docx,.txt,'" ng-if="vm.isImage(file)">
+          <img style="border: none;border-image: none" width="35" height="35"
+               ngf-src="vm.docImage()" ng-if="!vm.isImage(file)">
+          <a class="btn btn-xs btn-danger" ng-click="vm.remove(file)"><i class="glyphicon glyphicon-trash"></i></a>
+        </li>
+      </ul>
+    </div>
+    <script type="text/ng-template" id="FileCheck">
+            <div class="modal-header">
+                <h3 class="modal-title">{{'file_upload_check'|translate}}</h3>
+              </div>
+              <div class="modal-body">
+                <div ng-show="vm.isFileSize">{{'file_upload_check_size'|translate}}</div>
+                <div ng-show="vm.isFileType">{{'file_upload_check_type'|translate}}</div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="vm.cancel()">{{'button_sure'|translate}}
+                </button>
+          </div>
+    </script>
+
+    <button type="submit" class="btn btn-default btn-info" ng-disabled="isDisabled">{{'button_submit'|translate}}
+    </button>
+  </form>
+</div>

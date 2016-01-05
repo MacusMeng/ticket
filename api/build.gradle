@@ -1,0 +1,153 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'checkstyle'
+apply plugin: 'spring-boot'
+apply plugin: 'org.flywaydb.flyway'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:unchecked"
+    options.compilerArgs << "-Xlint:deprecation"
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    guavaVersion = '18.0'
+    junitVersion = '4.12'
+    hamcrestVersion = '1.3'
+    mockitoVersion = '1.10.19'
+    slf4jVersion = '1.7.12'
+    logbackVersion = '1.1.3'
+    springBootVersion = '1.2.5.RELEASE'
+    jacksonDatatypeVersion = '2.5.3'
+    jerseyVersion = '2.14'
+    flywayVersion = '3.2.1'
+    mysqlDriverVersion = '5.1.35'
+    querydslVersion = '3.6.5'
+    jbcryptVersion = '0.3m'
+    kaptchaVersion = '2.3.2'
+    commonsCodecVersion = '1.10'
+    commonsValidatorsVersion = '1.4.1'
+    javaMailVersion = '1.5.4'
+    velocityVersion = '1.7'
+}
+
+sourceSets {
+    generated {
+        java {
+            srcDirs = ['src/main/generated-sources']
+        }
+    }
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile("com.google.guava:guava:$guavaVersion")
+    compile("org.slf4j:slf4j-api:$slf4jVersion")
+    compile("org.slf4j:jcl-over-slf4j:$slf4jVersion")
+    compile("ch.qos.logback:logback-classic:$logbackVersion")
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-jersey:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonDatatypeVersion")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonDatatypeVersion")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-guava:$jacksonDatatypeVersion")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jacksonDatatypeVersion")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate4:$jacksonDatatypeVersion")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion")
+
+    compile("org.glassfish.jersey.media:jersey-media-multipart:$jerseyVersion")
+    compile("org.flywaydb:flyway-core:$flywayVersion")
+    compile("com.mysema.querydsl:querydsl-apt:$querydslVersion")
+    compile("com.mysema.querydsl:querydsl-jpa:$querydslVersion")
+    compile("org.mindrot:jbcrypt:$jbcryptVersion")
+    compile("commons-codec:commons-codec:$commonsCodecVersion")
+    compile("commons-validator:commons-validator:$commonsValidatorsVersion")
+    compile("org.springframework.boot:spring-boot-starter-mail:$springBootVersion")
+    compile("org.apache.velocity:velocity:$velocityVersion")
+
+    runtime("mysql:mysql-connector-java:$mysqlDriverVersion")
+    testCompile("junit:junit:$junitVersion")
+    testCompile("org.hamcrest:hamcrest-all:$hamcrestVersion")
+    testCompile("org.mockito:mockito-all:$mockitoVersion")
+
+}
+
+checkstyle {
+    configFile = file("$rootProject.projectDir/config/checkstyle/google_checks.xml")
+    toolVersion = '6.7'
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.2.3.RELEASE'
+        flywayVersion = '3.2.1'
+        mysqlDriverVersion = '5.1.35'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+        classpath("org.flywaydb:flyway-gradle-plugin:$flywayVersion")
+        classpath("mysql:mysql-connector-java:$mysqlDriverVersion")
+    }
+}
+
+flyway {
+    driver = 'com.mysql.jdbc.Driver'
+    url = 'jdbc:mysql://localhost/ticket'
+    user = 'ticket'
+    password = '12345678'
+}
+
+task generateMetaModel(type: JavaCompile, group: 'build', description: 'Generate the metamodel') {
+    source = sourceSets.main.java
+    classpath = configurations.compile
+    options.compilerArgs = [
+            "-proc:only",
+            "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
+    ]
+    destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
+}
+
+compileJava {
+    dependsOn generateMetaModel
+    source generateMetaModel.destinationDir
+}
+
+compileGeneratedJava {
+    dependsOn generateMetaModel
+    options.warnings = false
+    classpath += sourceSets.main.runtimeClasspath
+}
+
+clean {
+    delete sourceSets.generated.java.srcDirs
+}
+
+bootRun {
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
+}
+
+task packTicket(type: War) {
+    archiveName "ticket.war"
+}
+
+task packTicketAdmin(type: War) {
+    archiveName "ticket-admin.war"
+}

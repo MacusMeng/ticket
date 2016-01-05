@@ -1,0 +1,8 @@
+<html>
+<body>
+<p>${messageSource.getMessage('mail.engineer_replied.content.line.one', $lineOneArgs, $locale)}</p>
+
+<p>${messageSource.getMessage('mail.engineer_replied.content.line.two',$lineTwoArgs,$locale)}</p>
+
+</body>
+</html>

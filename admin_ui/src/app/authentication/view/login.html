@@ -1,0 +1,65 @@
+<div class="container">
+  <div id="loginbox" style="margin-top:50px;"
+       class="mainbox col-md-10 col-md-offset-1">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">{{'title_sign_in'|translate}}</div>
+
+      </div>
+
+      <div style="padding-top:30px" class="panel-body">
+
+        <div ng-repeat="item in vm.alerts" class="alert alert-danger col-sm-12" role="alert">
+          {{item|authenticationError|translate}}
+        </div>
+
+        <form id="loginform" name="loginform" class="form-horizontal" ng-submit="vm.login(loginform)" novalidate>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="login-username" type="text" class="form-control" name="usernameOrEmail"
+                   ng-model="vm.loginform.usernameOrEmail"
+                   placeholder="{{'authentication_username_email_title'|translate}}" required
+                   ng-maxlength="100">
+          </div>
+          <div class="error-message" ng-if="vm.interacted(loginform,loginform.usernameOrEmail)"
+               ng-messages="loginform.usernameOrEmail.$error">
+            <div ng-message="required">{{'login_index_message_username_email_not_null'|translate}}</div>
+            <div ng-message="maxlength">{{'login_index_message_username_email_max_length'|translate}}</div>
+          </div>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="login-password" type="password" class="form-control" name="password"
+                   ng-model="vm.loginform.password"
+                   placeholder="{{'authentication_password_title'|translate}}" required ng-maxlength="100">
+          </div>
+          <div class="error-message" ng-if="vm.interacted(loginform,loginform.password)"
+               ng-messages="loginform.password.$error">
+            <div ng-message="required">{{'login_index_message_password_not_null'|translate}}</div>
+            <div ng-message="maxlength">{{'login_index_message_password_max_length'|translate}}</div>
+          </div>
+
+          <div style="margin-top:10px" class="form-group">
+            <!-- Button -->
+            <div class="col-sm-12 controls">
+              <button type="submit" id="btn-login" class="btn btn-success">{{'button_login'|translate}}</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                {{'login_index_tip'|translate}}
+                <a ng-click="vm.openRegister()" style="cursor: pointer">
+                  {{'link_to_register'|translate}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.7">
+<file name="/Program/Java/workspaces/ticket/api/src/main/generated-sources/com/ibm/pmc/ticket/admin/domain/QAdmin.java">
+<error line="3" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.PathMetadataFactory.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.path.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="warning" message="Wrong lexicographical order for &apos;com.mysema.query.types.PathMetadata&apos; import." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="warning" message="&apos;javax.annotation.Generated&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="warning" message="First sentence should be present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="23" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="31" severity="warning" message="Line is longer than 100 characters (found 173)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="35" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Program/Java/workspaces/ticket/api/src/main/generated-sources/com/ibm/pmc/ticket/admin/domain/QAdminModule.java">
+<error line="3" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.PathMetadataFactory.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.path.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="warning" message="Wrong lexicographical order for &apos;com.mysema.query.types.PathMetadata&apos; import." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="warning" message="&apos;javax.annotation.Generated&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="warning" message="First sentence should be present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="36" severity="warning" message="Line is longer than 100 characters (found 106)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="47" severity="warning" message="Line is longer than 100 characters (found 103)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Program/Java/workspaces/ticket/api/src/main/generated-sources/com/ibm/pmc/ticket/notification/domain/QNotification.java">
+<error line="3" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.PathMetadataFactory.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.path.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="warning" message="Wrong lexicographical order for &apos;com.mysema.query.types.PathMetadata&apos; import." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="warning" message="&apos;javax.annotation.Generated&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="warning" message="First sentence should be present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="25" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="29" severity="warning" message="Line is longer than 100 characters (found 134)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="31" severity="warning" message="Line is longer than 100 characters (found 126)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="33" severity="warning" message="Line is longer than 100 characters (found 118)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="39" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="46" severity="warning" message="Line is longer than 100 characters (found 106)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="57" severity="warning" message="Line is longer than 100 characters (found 105)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="57" column="5" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="59" severity="warning" message="Line is longer than 100 characters (found 145)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="60" severity="warning" message="Line is longer than 100 characters (found 136)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Program/Java/workspaces/ticket/api/src/main/generated-sources/com/ibm/pmc/ticket/reply/domains/QReply.java">
+<error line="3" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.PathMetadataFactory.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.path.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="warning" message="Wrong lexicographical order for &apos;com.mysema.query.types.PathMetadata&apos; import." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="warning" message="&apos;javax.annotation.Generated&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="warning" message="First sentence should be present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="29" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="44" severity="warning" message="Line is longer than 100 characters (found 106)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="55" column="5" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck"/>
+<error line="57" severity="warning" message="Line is longer than 100 characters (found 124)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="58" severity="warning" message="Line is longer than 100 characters (found 130)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Program/Java/workspaces/ticket/api/src/main/generated-sources/com/ibm/pmc/ticket/ticket/domains/QTicket.java">
+<error line="3" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.PathMetadataFactory.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="5" severity="warning" message="Using the &apos;.*&apos; form of import should be avoided - com.mysema.query.types.path.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="7" severity="warning" message="Wrong lexicographical order for &apos;com.mysema.query.types.PathMetadata&apos; import." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="8" severity="warning" message="&apos;javax.annotation.Generated&apos; should be separated from previous import group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="9" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="warning" message="Import statement is in the wrong order. Should be in the &apos;THIRD_PARTY_PACKAGE&apos; group." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="warning" message="First sentence should be present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="25" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="29" severity="warning" message="Line is longer than 100 characters (found 142)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="33" severity="warning" message="Line is longer than 100 characters (found 337)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="39" severity="warning" message="Line is longer than 100 characters (found 128)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+</checkstyle>

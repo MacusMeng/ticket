@@ -1,0 +1,73 @@
+<form class="form-group" name="repliesForm" ng-submit="vm.submit(repliesForm)" novalidate>
+  <div class="row">
+    <div class="col-xs-6 col-sm-12" ng-model="ticket">
+      <h2>{{vm.ticket.title}}</h2>
+      <label>{{'tickets_table_number'|translate}}:</label>
+      <span>{{vm.ticket.number}}</span>
+      <label>{{'ticket_publish_person'|translate}}:</label>
+      <span>{{vm.ticket.username}}</span>
+      <label>{{'tickets_table_module'|translate}}:</label>
+      <span>{{vm.ticket.module|ticketModule|translate}}</span>
+      <label>{{'ticket_publish_time'|translate}}:</label>
+      <span>{{vm.ticket.createdAt|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+      <label>{{'ticket_publish_status'|translate}}:</label>
+      <span>{{vm.ticket.status|ticketStatus|translate}}</span>
+
+      <p ng-bind-html="vm.ticket.content|unsafe" class="breadcrumb"></p>
+
+      <ul class="list-inlie">
+        <li ng-repeat="file in vm.ticket.fileNames">
+          <span>{{file.fileName}}</span>
+          <img style="border: none;border-image: none" width="35" height="35" ngf-src="vm.url(file)"
+               ng-if="vm.isImage(file)">
+          <img style="border: none;border-image: none" width="35" height="35"
+               ngf-src="vm.docImage()" ng-if="!vm.isImage(file)">
+          <a class="btn btn-xs btn-info" target="_blank" download
+             ng-href="/ticket-admin/api/tickets/{{vm.form.ticketId}}/files/{{file.fileName}}/download"><i
+            class="glyphicon glyphicon-download"></i></a>
+        </li>
+      </ul>
+
+      <div class="qa-message-list" id="wallmessages" ng-repeat="item in vm.ticket.replies">
+        <div class="message-item" id="m16">
+          <div class="message-inner">
+            <div class="message-head clearfix">
+              <div class="user-detail">
+                <h5 class="handle">{{item.username||item.adminName}}</h5>
+
+                <div class="post-meta">
+                  <div class="asker-meta">
+                    <span class="qa-message-what"></span>
+											<span class="qa-message-when">
+												<span class="qa-message-when-data">{{item.createdAt|date:'yyyy-MM-dd HH:mm:ss'}}</span>
+											</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="qa-message-content">
+              <p ng-bind-html="item.content|unsafe"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="vm.isShow()">
+        <div class="form-group">
+          <textarea name="content" ui-tinymce="vm.tinymceOptions" ng-model="vm.form.content" required></textarea>
+
+          <div class="error-message" ng-if="vm.interacted(repliesForm,repliesForm.content)"
+               ng-messages="repliesForm.content.$error">
+            <div ng-message="required">{{'reply_add_message_content_not_null'|translate}}</div>
+          </div>
+        </div>
+        <div ng-repeat="item in vm.alerts" class="alert alert-danger col-sm-12" role="alert">{{item|ticketErrors|translate}}</div>
+        <div ng-bind-html="vm.form.content|unsafe" ng-show="false"></div>
+        <button type="submit" class="btn btn-default btn-info" ng-disabled="isDisabled">{{'replies_submit_button'|translate}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+

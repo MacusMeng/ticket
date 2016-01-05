@@ -1,0 +1,3 @@
+rootProject.name = 'ticket'
+include ':api', ':admin_ui', ':user_ui'
+

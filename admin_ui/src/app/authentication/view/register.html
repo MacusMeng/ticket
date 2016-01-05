@@ -1,0 +1,105 @@
+<div class="container">
+  <div id="signupbox"
+       class="mainbox col-md-10 col-md-offset-1">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">{{'title_sign_up'|translate}}</div>
+        <div style="float:right; font-size: 85%; position: relative; top:-10px">
+          <a style="color: #2C3E50;cursor: pointer" id="signinlink"
+             ng-click="vm.openLogin()">{{'title_sign_in'|translate}}</a></div>
+      </div>
+      <div class="panel-body">
+        <form id="signupform" name="signupform" class="form-horizontal" role="form" novalidate
+              ng-submit="vm.register(signupform)">
+
+          <div ng-repeat="item in vm.alerts" class="alert alert-danger col-sm-12" role="alert">
+            {{item|authenticationError|translate}}
+          </div>
+
+          <div class="form-group">
+            <label for="username" class="col-md-3 control-label">{{'register_label_title_username'|translate}}</label>
+
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="username" name="username"
+                     ng-model="vm.signupform.username" placeholder="{{'register_tip_username'|translate}}"
+                     required ng-maxlength="100" ui-validate="{usernameFormat:'vm.validateUsername($value)'}">
+
+              <div class="error-message" ng-if="vm.interacted(signupform,signupform.username)"
+                   ng-messages="signupform.username.$error">
+                <div ng-message="required">{{'register_index_message_username_not_null'|translate}}</div>
+                <div ng-message="maxlength">{{'register_index_message_username_max_length'|translate}}</div>
+                <div ng-message="usernameFormat">{{'authentication_message_invalid_username'|translate}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="passwd" class="col-md-3 control-label">{{'authentication_password_title'|translate}}</label>
+
+            <div class="col-md-9">
+              <input type="password" class="form-control" id="passwd" name="passwd"
+                     placeholder="{{'register_tip_password'|translate}}"
+                     ng-model="vm.signupform.passwd" required ng-maxlength="100"
+                     ui-validate="{passwordFormat:'vm.validatePassword($value)'}">
+
+              <div class="error-message" ng-if="vm.interacted(signupform,signupform.passwd)"
+                   ng-messages="signupform.passwd.$error">
+                <div ng-message="required">{{'login_index_message_password_not_null'|translate}}</div>
+                <div ng-message="maxlength">{{'login_index_message_password_max_length'|translate}}</div>
+                <div ng-message="passwordFormat">{{'authentication_message_invalid_password'|translate}}</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-md-3 control-label">{{'register_label_title_email'|translate}}</label>
+
+            <div class="col-md-9">
+              <input type="email" class="form-control" id="email" name="email" ng-model="vm.signupform.email"
+                     placeholder="{{'register_index_message_email_not_null'|translate}}" required ng-maxlength="100">
+
+              <div class="error-message" ng-if="vm.interacted(signupform,signupform.email)"
+                   ng-messages="signupform.email.$error">
+                <div ng-message="required">{{'register_index_message_email_not_null'|translate}}</div>
+                <div ng-message="email">{{'register_index_message_email_format_error'|translate}}</div>
+                <div ng-message="maxlength">{{'register_index_message_email_max_length'|translate}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">{{'register_label_module'|translate}}</label>
+
+            <div class="col-md-9">
+              <ui-select multiple ng-model="vm.signupform.selectedModules" id="modules" name="modules"
+                         theme="bootstrap" ui-select-required>
+                <ui-select-match placeholder="{{'register_index_placeholder_module'|translate}}">
+                  {{$item.label|translate}}
+                </ui-select-match>
+                <ui-select-choices repeat="module in vm.modules | filter:$select.search">
+                  <div ng-bind-html="module.label|translate | highlight: $select.search"></div>
+                </ui-select-choices>
+              </ui-select>
+              <div class="error-message" ng-if="vm.interacted(signupform,signupform.modules)"
+                   ng-messages="signupform.modules.$error">
+                <div ng-message="uiSelectRequired">{{'register_index_message_module_not_null'|translate}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <!-- Button -->
+            <div class="col-md-offset-3 col-md-9">
+              <button id="btn-signup" type="submit" class="btn btn-info"><i class="glyphicon glyphicon-hand-up"></i>{{'title_sign_up'|translate}}
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

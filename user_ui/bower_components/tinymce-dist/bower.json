@@ -1,0 +1,50 @@
+{
+  "name": "tinymce",
+  "version": "4.1.10",
+  "description": "Web based JavaScript HTML WYSIWYG editor control.",
+  "license": "http://www.tinymce.com/license",
+  "keywords": [
+    "editor",
+    "wysiwyg",
+    "tinymce",
+    "richtext",
+    "javascript",
+    "html"
+  ],
+  "homepage": "http://www.tinymce.com",
+  "main": [
+    "tinymce.min.js",
+    "themes/modern/theme.js",
+    "plugins/preview/plugin.js",
+    "plugins/save/plugin.js",
+    "plugins/emoticons/plugin.js",
+    "plugins/emoticons/img/*.*",
+    "plugins/insertdatetime/plugin.js",
+    "plugins/advlist/plugin.js",
+    "plugins/paste/plugin.js",
+    "plugins/textcolor/plugin.js",
+    "plugins/autoresize/plugin.js",
+    "plugins/autosave/plugin.js",
+    "skins/light/fonts/tinymce.eot",
+    "skins/light/fonts/tinymce.svg",
+    "skins/light/fonts/tinymce.ttf",
+    "skins/light/fonts/tinymce.woff",
+    "skins/light/fonts/tinymce-small.woff",
+    "skins/light/fonts/tinymce-small.ttf",
+    "skins/light/fonts/tinymce-small.svg",
+    "skins/light/fonts/tinymce-small.eot",
+    "skins/light/img/anchor.gif",
+    "skins/light/img/loader.gif",
+    "skins/light/img/object.gif",
+    "skins/light/img/trans.gif",
+    "skins/light/content.inline.min.css",
+    "skins/light/content.min.css",
+    "skins/light/skin.ie7.min.css",
+    "skins/light/skin.min.css"
+  ],
+  "ignore": [
+    "readme.md",
+    "composer.json",
+    "package.json"
+  ]
+}

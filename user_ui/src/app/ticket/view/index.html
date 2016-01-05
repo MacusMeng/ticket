@@ -1,0 +1,50 @@
+<div ng-repeat="item in vm.alerts" class="alert alert-danger" role="alert">{{item|ticketErrors|translate}}</div>
+<form class="form-inline" name="ticketListForm">
+  <div class="form-group">
+    <label>{{'tickets_search_number'|translate}}</label>
+    <input type="text" class="form-control" name="number"
+           placeholder="{{'tickets_search_number'|translate}}"
+           ng-model="vm.form.number" ui-validate="{NumberFormat:'vm.validateNumber($value)'}"/>
+    <button class="btn btn-info btn-default " ng-click="vm.query(ticketListForm)" ondblclick="return false;"><i class="glyphicon glyphicon-filter"></i>{{'button_query'|translate}}
+    </button>
+  </div>
+  <div class="error-message" ng-if="vm.interacted(ticketListForm,ticketListForm.number)"
+       ng-messages="ticketListForm.number.$error">
+    <div ng-message="NumberFormat">{{'ticketId_input_error'|translate}}</div>
+  </div>
+<div class="row" style="margin-top: 20px;">
+  <tabset justified="true">
+    <tab ng-repeat="tab in vm.tabs" heading="{{tab.label|translate}}" active="tab.active" select="vm.select(tab.id,ticketListForm)">
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>{{'ticket_index_table_number'|translate}}</th>
+          <th>{{'ticket_index_table_title'|translate}}</th>
+          <th>{{'ticket_index_table_status'|translate}}</th>
+          <th>{{'ticket_index_table_module'|translate}}</th>
+          <th>{{'ticket_index_table_updated_time'|translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in vm.tickets">
+          <td style="width: 10%"><a ui-sref="ticket.ticket.ticketInfo({id:item.id})">#{{item.number}}</a></td>
+          <td style="width:30%" class="breakword">{{item.title}}</td>
+          <td style="width: 20%">{{item.status|ticketStatus|translate}}</td>
+          <td style="width: 20%">{{item.module|modules|translate}}</td>
+          <td style="width: 20%">{{item.updatedAt|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="text-right">
+        <pagination total-items="vm.totalItems" ng-model="vm.form.page" class="pagination-sm" boundary-links="true"
+                    num-pages="vm.totalPages" max-size="5" rotate="false" items-per-page="vm.form.pageSize"
+                    ng-change="vm.query(ticketListForm)"
+                    previous-text="{{'button_previous'|translate}}" first-text="{{'button_first'|translate}}"
+                    next-text="{{'button_next'|translate}}"
+                    last-text="{{'button_last'|translate}}"></pagination>
+      </div>
+    </tab>
+  </tabset>
+</div>
+</form>
+

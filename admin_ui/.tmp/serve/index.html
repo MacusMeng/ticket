@@ -1,0 +1,114 @@
+<!doctype html>
+<html ng-app="adminUi">
+<head>
+  <meta charset="utf-8">
+  <title>{{'title_ticket'|translate}}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <link rel="stylesheet" href="app/vendor.css">
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="../bower_components/angular-ui-select/dist/select.css" />
+  <link rel="stylesheet" href="../bower_components/angular-wizard/dist/angular-wizard.css" />
+  <link rel="stylesheet" href="../bower_components/tinymce-dist/skins/light/content.inline.min.css" />
+  <link rel="stylesheet" href="../bower_components/tinymce-dist/skins/light/content.min.css" />
+  <link rel="stylesheet" href="../bower_components/tinymce-dist/skins/light/skin.ie7.min.css" />
+  <link rel="stylesheet" href="../bower_components/tinymce-dist/skins/light/skin.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="app/index.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ui-view></div>
+
+
+<!-- build:js(src) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="../bower_components/angular-touch/angular-touch.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/lodash/lodash.js"></script>
+<script src="../bower_components/angular-translate/angular-translate.js"></script>
+<script src="../bower_components/angular-ui-select/dist/select.js"></script>
+<script src="../bower_components/angular-ui-utils/ui-utils.js"></script>
+<script src="../bower_components/angular-messages/angular-messages.js"></script>
+<script src="../bower_components/ng-remote-validate/release/ngRemoteValidate.js"></script>
+<script src="../bower_components/angular-wizard/dist/angular-wizard.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/tinymce-dist/tinymce.min.js"></script>
+<script src="../bower_components/tinymce-dist/themes/modern/theme.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/preview/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/save/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/emoticons/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/insertdatetime/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/advlist/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/paste/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/textcolor/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/autoresize/plugin.js"></script>
+<script src="../bower_components/tinymce-dist/plugins/autosave/plugin.js"></script>
+<script src="../bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+<script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="../bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+<!-- inject:js -->
+<script src="app/app.js"></script>
+<script src="app/ticket/sao/ticket.sao.js"></script>
+<script src="app/ticket/sao/replies.sao.js"></script>
+<script src="app/ticket/filter/TicketStatus.js"></script>
+<script src="app/ticket/filter/TicketModule.js"></script>
+<script src="app/ticket/filter/Errors.js"></script>
+<script src="app/ticket/controller/ticket.ticketInfo.controller.js"></script>
+<script src="app/ticket/controller/ticket.index.controller.js"></script>
+<script src="app/ticket/constant/EnumTicketStatus.js"></script>
+<script src="app/ticket/constant/EnumTicketModule.js"></script>
+<script src="app/ticket/constant/EnumTicketErrors.js"></script>
+<script src="app/authentication/service/authentication.service.js"></script>
+<script src="app/authentication/sao/authentication.sao.js"></script>
+<script src="app/authentication/filter/AuthenticationError.js"></script>
+<script src="app/authentication/controller/register.controller.js"></script>
+<script src="app/authentication/controller/login.controller.js"></script>
+<script src="app/authentication/constant/NoAuthStates.js"></script>
+<script src="app/authentication/constant/EnumAuthenticationErrors.js"></script>
+<script src="app/component/services/NavData.js"></script>
+<script src="app/component/filter/unsafe.js"></script>
+<script src="app/component/directives/ui-select-required.js"></script>
+<script src="app/component/directives/angular-jquery.js"></script>
+<script src="app/component/directives/angular-bootstrap-affix.js"></script>
+<script src="app/component/constant/EnumExceptionMappings.js"></script>
+<script src="app/layout/layout.service.js"></script>
+<script src="app/layout/layout.controller.js"></script>
+<script src="app/config/router.js"></script>
+<script src="app/config/i18n.js"></script>
+<script src="app/config/config.js"></script>
+<!-- endinject -->
+
+<!-- inject:partials -->
+<!-- angular templates will be automatically converted in js and inserted here -->
+<!-- endinject -->
+<!-- endbuild -->
+
+</body>
+</html>

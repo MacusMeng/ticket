@@ -1,0 +1,1 @@
+ALTER TABLE `tickets` DROP COLUMN `admin_id`;
